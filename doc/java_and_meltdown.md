@@ -66,6 +66,9 @@ It's that speculation and branch prediction which the new attacks go after.
 
 ## Our Experimental source
 
+The (evoving) source is at: [Main.java](https://github.com/steveloughran/speculate/blob/master/src/main/java/org/apache/labs/Main.java)
+
+
 ```java
 package org.apache.labs;
 
@@ -132,6 +135,16 @@ some java.sun.com URL which resolves into a toplevel "we are oracle, we own java
 
 By breaking all their old URLs, oracle have made JVM forensics significantly harder than it need be.
 
+
+Once you have uncovered a copy of the DLL from somewhere, you can
+Built with `maven install` or the IDE, and then executed with
+
+```bash
+java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -jar target/speculation-1.0-SNAPSHOT.jar 10000 > target/out.asm 
+```
+
+This generates 6-7 MB of logs, where you can then look for the string `'codeblock'` to find the
+compiled method somewhere near the tail of the log.
 
 #### Method `codeblock()`
 
