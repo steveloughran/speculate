@@ -37,6 +37,8 @@ export LD_LIBRARY_PATH=~lib/
 Better to use `-XX:CompileThreshold=100`
 
 
+
+
 # Notes
 
 It's truly awful how pretty much every article and blog post on the topic of JIT compilation is broken.
@@ -52,3 +54,8 @@ Low level information on how the JRE compiles code to native machine code is now
 to work out what's going on, because articles written six years go have had all their citations unlinked.
 (there's some coverage on [github](https://github.com/AdoptOpenJDK/jitwatch/wiki/Understanding-the-On-Stack-Replacement-(OSR)-optimisation-in-the-HotSpot-C1-compiler)), 
 better hope they and StackOverflow never go away.
+
+
+## References
+
+* [x86-64 Machine-Level Programming](https://www.cs.cmu.edu/~fp/courses/15213-s07/misc/asm64-handout.pdf)
