@@ -109,7 +109,6 @@ public class Main {
 
 ```
 
-
 The exploit is in the `codeblock()` method, because it needs executing ~10K times before the JIT compiler
 generates the x86 code.
 
@@ -245,7 +244,6 @@ a memory reference, we can assume its ready.
 Spectre shows how, because many branch addresses can match the same entry in the branch predictor, malicious
 code can contaminate the prediction, and/or use timings of its own work to infer what branch was taken.
 
-
 As AMD parts don't to speculative memory accesses, they aren't going to execute this instruction until
 the range check is complete. It sounds like some ARM parts do though.
 
@@ -322,7 +320,7 @@ This is where the second buffer, `redir` is read using an offset calculated from
 Were it not for that range check and its extra jump, this could be running speculatively, hence having the side
 effect which meltdown exploits.
 But provided the jump of operation #10 forces the CPU to block there
-until the outcome of the jump at operation £8 is known,
+until the outcome of the jump at operation #8 is known,
 this read here will never be executed before the range check of the first read has been completed.
 Which, given an out of range index will have branched of already, means that you don't to do a speculative
 read on the second array based on the unvalidated data of the first deref.
@@ -347,7 +345,7 @@ lookup, and unless the CPU can do a speculative branch prediction inside another
 to do the second pointer dereference.
 
 *The basic Meltdown example doesn't work in Java, but only because dereferencing into an array doesn't work
-as an exfiltration strategy*
+as an exfiltration strategy, and provided the CPU doesn't do deep-branch-preduction*
 
 ## Other solutios
 
