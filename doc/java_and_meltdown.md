@@ -137,7 +137,7 @@ By breaking all their old URLs, oracle have made JVM forensics significantly har
 
 
 Once you have uncovered a copy of the DLL from somewhere, you can
-Built with `maven install` or the IDE, and then executed with
+build this module with `maven install` or the IDE, and then execute it with
 
 ```bash
 java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -jar target/speculation-1.0-SNAPSHOT.jar 10000 > target/out.asm 
