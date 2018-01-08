@@ -20,6 +20,7 @@ the assembler as you debugged, and you did get used to reading the assembly, und
 knowing how it all glued together. Not any more. Now I use tests over edit-and-continue coding while
 debugging the app, and don't even know the Java "Virtual Machine" assembler. 
 
+1. If the CPU can speculate on a branch within a speculative branch, the exploit holds (as [asserted by Thomas Wuerthinger](https://twitter.com/thomaswue/status/950316107877027840). So I'm utterly wrong
 1. Other JREs may generate different code.
 1. The same JRE may choose to generate different code on a different run. Who knows?
 1. The way the hotspot compiler works, it has to decide when to compile down.
